@@ -1,0 +1,46 @@
+Rota / Recursos
+    localhost:3333/users -> Recurso: '/users'
+
+Métodos HTTP:
+    GET:    Buscar uma informações do back-end
+    POST:   Criar uma informação do back-end
+    PUT:    Alterar uma informação do back-end
+    DELETE: Deletar uma informação do back-end
+
+Tipos de parâmetros:
+    Query Params:   Parâmetros nomeados enviados na rota após "?" (Filtros, Paginação)
+        request.query
+    Route Params:   Parâmetros utilizdos para identificar recursos
+        request.params
+    Request Body:   Corpo da requisição, utilizado para criar ou alterar recursos
+        request.body
+
+Banco de Dados:
+    SQL:    MySQL, SQLite, PostgreSQL, Oracle, Microsoft SQL Server
+    NoSQL:  MongoDB, CouchDB, etc
+
+    Driver: SELECT * FROM users
+    Query Builder: table('users').select('*').where()
+
+
+Entidades:
+    ONG
+    Casos(incident)
+
+Funcionalidades:
+    Login de ONG
+    Logout de ONG
+    Cadastro de ONG
+    Cadastro de novos Casos
+    Deletar Casos
+    Listar Casos especificos de uma ONG
+    Listar todos os Casos
+    Entrar em contato com a ONG
+
+
+Criar chave com o id da ONG
+    Dentro da tabela incidents criar campo do id da ONG 
+        table.string('ong_id').notNullable();
+    Refereciar 
+        table.foreign('ong_id').references('id').inTable('ongs')
+
